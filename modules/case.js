@@ -27,7 +27,7 @@ exports.execute = (req, res) => {
         .then(data => {
             let fields = [];
             fields.push({title: "Subject", value: subject, short:false});
-            fields.push({title: "Description", value: description, short:false});
+            fields.push({title: "Description CCase", value: description, short:false});
             fields.push({title: "Open in Salesforce Test:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
                 text: "A new case has been created:",
