@@ -25,7 +25,8 @@ If you haven't already done so, follow the steps below to create a Salesforce co
 1. Make sure you are logged in to the [Heroku Dashboard](https://dashboard.heroku.com/)
 1. Click the button below to deploy the Slash Commands on Heroku:
 
-    [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+    
+	[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/patrickwangxaxis/slackforce)
 
 1. Fill in the config variables as described.
 
