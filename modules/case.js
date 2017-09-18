@@ -26,7 +26,6 @@ exports.execute = (req, res) => {
         })
         .then(data => {
             let fields = [];
-            fields.push({title: "Subject", value: subject, short:false});
             fields.push({title: "Description Case", value: description, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
