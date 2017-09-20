@@ -32,7 +32,36 @@ exports.execute = (req, res) => {
             let message = {
                 text: "A new case has been created:",
                 attachments: [
-                    {color: "#F2CF5B", fields: fields}
+                    {color: "#F2CF5B", fields: fields,
+					"attachment_type": "default",
+            "actions": [
+                {
+                    "name": "game",
+                    "text": "Fun Chess",
+                    "type": "button",
+                    "value": "chess"
+                },
+                {
+                    "name": "game",
+                    "text": "Falken's Maze",
+                    "type": "button",
+                    "value": "maze"
+                },
+                {
+                    "name": "game",
+                    "text": "Thermonuclear War",
+                    "style": "danger",
+                    "type": "button",
+                    "value": "war",
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "text": "Wouldn't you prefer a good game of chess?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                }
+            ]	
+					}
                 ]
             };
             res.json(message);
