@@ -35,27 +35,16 @@ exports.execute = (req, res) => {
                     {color: "#F2CF5B", fields: fields,
 					"attachment_type": "default",
             "actions": [
+                 
                 {
                     "name": "game",
-                    "text": "Fun Chess",
-                    "type": "button",
-                    "value": "chess"
-                },
-                {
-                    "name": "game",
-                    "text": "Falken's Maze",
-                    "type": "button",
-                    "value": "maze"
-                },
-                {
-                    "name": "game",
-                    "text": "Thermonuclear War",
+                    "text": "Claim To Be The Case Owner",
                     "style": "danger",
                     "type": "button",
-                    "value": "war",
+                    "value": slackUserId,
                     "confirm": {
                         "title": "Are you sure?",
-                        "text": "Wouldn't you prefer a good game of chess?",
+                        "text": "Wouldn't you think twice?",
                         "ok_text": "Yes",
                         "dismiss_text": "No"
                     }
