@@ -43,8 +43,8 @@ exports.execute = (req, res) => {
                     "type": "button",
                     "value": slackUserId,
                     "confirm": {
-                        "title": "Are you sure?",
-                        "text": "",
+                        "title": "",
+                        "text": "Are you sure?",
                         "ok_text": "Yes",
                         "dismiss_text": "No"
                     }
