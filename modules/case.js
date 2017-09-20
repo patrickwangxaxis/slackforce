@@ -37,7 +37,7 @@ exports.execute = (req, res) => {
             "actions": [
                  
                 {
-                    "name": "game",
+                    "name": "change owner",
                     "text": "Claim To Be The Case Owner",
                     "style": "danger",
                     "type": "button",
