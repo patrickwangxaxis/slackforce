@@ -44,7 +44,7 @@ exports.execute = (req, res) => {
                     "value": slackUserId,
                     "confirm": {
                         "title": "Are you sure?",
-                        "text": "Wouldn't you think twice?",
+                        "text": "",
                         "ok_text": "Yes",
                         "dismiss_text": "No"
                     }
