@@ -38,7 +38,7 @@ exports.execute = (req, res) => {
 					 
 					
                 });
-                res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
+                //res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
 				console.log('res.json is '+res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments}));
 				
             } else {
