@@ -2,8 +2,7 @@
 
 let auth = require("./slack-salesforce-auth"),
     force = require("./force"),
-	contact = require('./contact'),
-    CASE_TOKEN = process.env.SLACK_CASE_TOKEN;
+	CASE_TOKEN = process.env.SLACK_CASE_TOKEN;
 
 exports.execute = (req, res) => {
 
@@ -59,7 +58,7 @@ exports.execute = (req, res) => {
             };
 			console.log('----slack user is ' + slackUserId);
             res.json(message);
-			app.post('/contact eric', contact.execute);
+			
 			 
         })
         .catch((error) => {
