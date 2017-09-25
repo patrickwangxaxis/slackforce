@@ -22,7 +22,7 @@ exports.execute = (req, res) => {
                 let attachments = [];
                 caseResults.forEach(function(c) {
                     let fields = [];
-					console.log('---case number is ' + c.casenumber);
+					console.log('---case id is ' + c.Id);
                     fields.push({title: "Case Number", value: c.casenumber, short:true});
                     fields.push({title: "Owner", value: c.ownerid, short:true});
                     fields.push({title: "Subject", value: c.subject, short:true});
