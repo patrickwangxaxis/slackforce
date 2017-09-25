@@ -9,6 +9,7 @@ let express = require('express'),
     _case = require('./modules/case'),
     whoami = require('./modules/whoami'),
     actions = require('./modules/actions'),
+	searchCase = require('./modules/search_case')
     app = express();
 
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/actions', actions.handle);
 app.post('/pipeline', opportunity.execute);
 app.post('/contact', contact.execute);
+app.post('/searchcase', searchCase.execute);
 app.post('/account', account.execute);
 app.post('/case', _case.execute);
 app.post('/whoami', whoami.execute);
