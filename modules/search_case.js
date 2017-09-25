@@ -27,11 +27,15 @@ exports.execute = (req, res) => {
                     fields.push({title: "Owner", value: c.Owner.Name, short:true});
                     fields.push({title: "Subject", value: c.Subject, short:true});
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
-                    attachments.push({color: "#A094ED", fields: fields});
-					 
+					
 					let actions = [];
 					actions.push({name:"change owner", type:"button", value:slackUserId});
-					attachement.push(actions:actions);
+					
+					
+                    attachments.push({color: "#A094ED", fields: fields, actions: actions});
+					 
+					
+					 
 					
                 });
                 res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
