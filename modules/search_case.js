@@ -13,7 +13,7 @@ exports.execute = (req, res) => {
 
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
-        q = "SELECT Id, casenumber, ownerid, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 1";
+        q = "SELECT Id, casenumber, ownerid, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 20";
 
     force.query(oauthObj, q)
         .then(data => {
@@ -38,15 +38,9 @@ exports.execute = (req, res) => {
                 {
                     "name": "change owner",
                     "text": "Claim Case Owner",
-                    "style": "danger",
                     "type": "button",
                     "value": slackUserId,
-                    "confirm": {
-                        "title": "",
-                        "text": "Are you sure?",
-                        "ok_text": "Yes",
-                        "dismiss_text": "No"
-                    }
+                    
                 }
             ] 
 					}
