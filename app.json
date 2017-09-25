@@ -47,6 +47,11 @@
         "description": "Slack token for the whoami slash command",
         "value":"",
         "required":false
-    }
+    },
+	"SLACK_SEARCH_CASE_TOKEN": {
+      "description": "Slack token for the case search slash command",
+      "value":"",
+      "required":false
+    },
   }
 }
