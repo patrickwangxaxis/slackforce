@@ -51,7 +51,10 @@ exports.execute = (req, res) => {
                     //attachments.push({color: "#A094ED", fields: fields});
 					 
 					res.json(message);
-					 
+					//*********************
+					var actionJSONPayload = JSON.parse(req.body.payload);
+					console.log('--actionJSONPayload is ' + actionJSONPayload);
+					//************************					
 					
                 });
                 //res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
