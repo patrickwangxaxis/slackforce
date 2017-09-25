@@ -13,7 +13,7 @@ exports.execute = (req, res) => {
 
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
-        q = "SELECT Id, casenumber, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 20";
+        q = "SELECT Id, casenumber, ownerid, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 20";
 
     force.query(oauthObj, q)
         .then(data => {
@@ -23,7 +23,7 @@ exports.execute = (req, res) => {
                 caseResults.forEach(function(c) {
                     let fields = [];
                     fields.push({title: "Case Number", value: c.casenumber, short:true});
-                    fields.push({title: "Owner Name", value: c.owner.name, short:true});
+                    fields.push({title: "Owner Name", value: c.ownerid, short:true});
                     fields.push({title: "Subject", value: c.subject, short:true});
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
                     attachments.push({color: "#A094ED", fields: fields});
