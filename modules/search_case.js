@@ -56,12 +56,12 @@ exports.execute = (req, res) => {
 					
                     //attachments.push({color: "#A094ED", fields: fields});
 					 
-					
+					res.json(message);
 					 
 					
                 });
                 //res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
-				res.json(message);
+				
 				
             } else {
                 res.send("No records");
