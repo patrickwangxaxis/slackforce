@@ -34,7 +34,8 @@ exports.execute = (req, res) => {
                 attachments: [
                     {color: "#F2CF5B", fields: fields,
 					"attachment_type": "default",
-            "actions": [
+            /*
+			"actions": [
                  
                 {
                     "name": "change owner",
@@ -49,7 +50,45 @@ exports.execute = (req, res) => {
                         "dismiss_text": "No"
                     }
                 }
-            ]	
+            ]*/
+			"actions": [
+                {
+                    "name": "games_list",
+                    "text": "Pick a game...",
+                    "type": "select",
+                    "options": [
+                        {
+                            "text": "Hearts",
+                            "value": "hearts"
+                        },
+                        {
+                            "text": "Bridge",
+                            "value": "bridge"
+                        },
+                        {
+                            "text": "Checkers",
+                            "value": "checkers"
+                        },
+                        {
+                            "text": "Chess",
+                            "value": "chess"
+                        },
+                        {
+                            "text": "Poker",
+                            "value": "poker"
+                        },
+                        {
+                            "text": "Falken's Maze",
+                            "value": "maze"
+                        },
+                        {
+                            "text": "Global Thermonuclear War",
+                            "value": "war"
+                        }
+                    ]
+                }
+            ]
+			
 					}
                 ]
             };
