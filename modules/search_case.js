@@ -20,7 +20,7 @@ exports.execute = (req, res) => {
             let caseResults = JSON.parse(data).records;
             if (caseResults && caseResults.length>0) {
                 //let attachments = [];
-                //caseResults.forEach(function(c) {
+                caseResults.forEach(function(c) {
                     let fields = [];
 					console.log('---case id is ' + c.Id);
                     fields.push({title: "Case Number", value: c.CaseNumber, short:true});
@@ -28,7 +28,7 @@ exports.execute = (req, res) => {
                     fields.push({title: "Subject", value: c.Subject, short:true});
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
 					let message = {
-                text: "A new case has been created:",
+                text: "Cases matching '" + req.body.text + "':",
                 attachments: [
                     {color: "#F2CF5B", fields: fields,
 					"attachment_type": "default",
@@ -59,8 +59,9 @@ exports.execute = (req, res) => {
 					
 					 
 					
-                //});
-                res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
+                });
+                //res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
+				res.json(message);
 				
             } else {
                 res.send("No records");
