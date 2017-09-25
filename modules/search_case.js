@@ -52,8 +52,7 @@ exports.execute = (req, res) => {
 					 
 					res.json(message);
 					//*********************
-					var actionJSONPayload = JSON.parse(req.body.payload);
-					console.log('--actionJSONPayload is ' + actionJSONPayload);
+					 
 					//************************					
 					
                 });
