@@ -24,7 +24,7 @@ exports.execute = (req, res) => {
                     let fields = [];
 					console.log('---case id is ' + c.Id);
                     fields.push({title: "Case Number", value: c.CaseNumber, short:true});
-                    fields.push({title: "Owner", value: c.OwnerId, short:true});
+                    fields.push({title: "Owner", value: c.Owner.Name, short:true});
                     fields.push({title: "Subject", value: c.Subject, short:true});
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
                     attachments.push({color: "#A094ED", fields: fields});
