@@ -20,12 +20,12 @@ exports.execute = (req, res) => {
             let caseResults = JSON.parse(data).records;
             if (caseResults && caseResults.length>0) {
                 let attachments = [];
-                caseResults.forEach(function(c) {
+                caseResults.forEach(function(case) {
                     let fields = [];
-                    fields.push({title: "Case Number", value: c.casenumber, short:true});
-                    fields.push({title: "Owner", value: c.ownerid, short:true});
-                    fields.push({title: "Subject", value: c.subject, short:true});
-                    fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
+                    fields.push({title: "Case Number", value: case.casenumber, short:true});
+                    fields.push({title: "Owner", value: case.ownerid, short:true});
+                    fields.push({title: "Subject", value: case.subject, short:true});
+                    fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + case.Id, short:false});
                     attachments.push({color: "#A094ED", fields: fields});
                 });
                 res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
