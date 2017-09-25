@@ -28,6 +28,19 @@ exports.execute = (req, res) => {
                     fields.push({title: "Subject", value: c.Subject, short:true});
                     fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + c.Id, short:false});
                     attachments.push({color: "#A094ED", fields: fields});
+					attachments.push("actions": [
+                 
+                {
+                    "name": "change owner",
+                    "text": "Claim To Be The Case Owner",
+                    "style": "danger",
+                    "type": "button",
+                    "value": slackUserId
+                    
+                }
+            ])
+					
+					
                 });
                 res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
             } else {
