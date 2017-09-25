@@ -9,7 +9,7 @@ let express = require('express'),
     _case = require('./modules/case'),
     whoami = require('./modules/whoami'),
     actions = require('./modules/actions'),
-	searchCase = require('./modules/search_case')
+	searchCase = require('./modules/search_case'),
     app = express();
 
 
