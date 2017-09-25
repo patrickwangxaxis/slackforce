@@ -32,7 +32,7 @@ exports.execute = (req, res) => {
 					actions.push({name:"change owner", type:"button", value:slackUserId});
 					
 					
-                    attachments.push({color: "#A094ED", fields: fields, "actions": actions});
+                    attachments.push({color: "#A094ED", fields: fields, "attachment_type": "default", "actions": actions});
 					 
 					
 					 
