@@ -13,7 +13,7 @@ exports.execute = (req, res) => {
 
     let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
-        q = "SELECT Id, casenumber, ownerid, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 20";
+        q = "SELECT Id, casenumber, ownerid, Owner.name, subject FROM Case WHERE subject LIKE '%" + req.body.text + "%' LIMIT 1";
 
     force.query(oauthObj, q)
         .then(data => {
@@ -39,6 +39,8 @@ exports.execute = (req, res) => {
 					
                 });
                 res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
+				console.log('res.json is '+res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments}));
+				
             } else {
                 res.send("No records");
             }
