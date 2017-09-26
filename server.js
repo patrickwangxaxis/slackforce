@@ -10,6 +10,7 @@ let express = require('express'),
     whoami = require('./modules/whoami'),
     actions = require('./modules/actions'),
 	searchCase = require('./modules/search_case'),
+	slackbutton = require('./modules/slack_button'),
     app = express();
 
 
@@ -32,6 +33,7 @@ app.post('/login', auth.loginLink);
 app.post('/logout', auth.logout);
 app.get('/login/:slackUserId', auth.oauthLogin);
 app.get('/oauthcallback', auth.oauthCallback);
+app.get('/slack/slash-commands/send-me-buttons', slackbutton.execute);
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
