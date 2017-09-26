@@ -49,10 +49,11 @@ exports.execute = (req, res) => {
             ]
         }
         //sendMessageToSlackResponseURL(responseURL, message)
+		console.log('----before res.json(message) ');
 		res.json(message);
     }
 };
-
+/*
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
     var postOptions = {
         uri: responseURL,
@@ -68,3 +69,4 @@ function sendMessageToSlackResponseURL(responseURL, JSONmessage){
         }
     })
 }
+*/
