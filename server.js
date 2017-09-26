@@ -26,6 +26,7 @@ app.post('/actions', actions.handle);
 app.post('/pipeline', opportunity.execute);
 app.post('/contact', contact.execute);
 app.post('/searchcase', searchCase.execute);
+app.post('/slack/slash-commands/send-me-buttons', slackbutton.execute);
 app.post('/account', account.execute);
 app.post('/case', _case.execute);
 app.post('/whoami', whoami.execute);
@@ -33,7 +34,7 @@ app.post('/login', auth.loginLink);
 app.post('/logout', auth.logout);
 app.get('/login/:slackUserId', auth.oauthLogin);
 app.get('/oauthcallback', auth.oauthCallback);
-app.get('/slack/slash-commands/send-me-buttons', slackbutton.execute);
+
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
