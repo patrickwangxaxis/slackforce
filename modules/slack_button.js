@@ -48,7 +48,8 @@ exports.execute = (req, res) => {
                 }
             ]
         }
-        sendMessageToSlackResponseURL(responseURL, message)
+        //sendMessageToSlackResponseURL(responseURL, message)
+		res.json(message);
     }
 };
 
