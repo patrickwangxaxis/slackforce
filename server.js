@@ -20,7 +20,7 @@ app.set('port', process.env.PORT || 5000);
 
 app.use('/', express.static(__dirname + '/www')); // serving company logos after successful authentication
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.post('/actions', actions.handle);
 app.post('/pipeline', opportunity.execute);
