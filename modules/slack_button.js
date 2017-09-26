@@ -1,8 +1,6 @@
 "use strict";
 
-let auth = require("./slack-salesforce-auth"),
-    force = require("./force"),
-    SEARCH_CASE_TOKEN = process.env.SLACK_SEARCH_CASE_TOKEN;
+ 
 
 exports.execute = (req, res) => {
 	res.status(200).end() // best practice to respond with empty 200 status code
