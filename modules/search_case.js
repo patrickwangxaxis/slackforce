@@ -51,9 +51,7 @@ exports.execute = (req, res) => {
                     //attachments.push({color: "#A094ED", fields: fields});
 					 
 					res.json(message);
-					//*********************
-					 
-					//************************					
+					 			
 					
                 });
                 //res.json({text: "Cases matching '" + req.body.text + "':", attachments: attachments});
