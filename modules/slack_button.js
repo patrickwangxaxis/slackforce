@@ -9,7 +9,7 @@ exports.execute = (req, res) => {
 	console.log('----place 2 ');
     //var responseURL = reqBody.response_url
 	//console.log('----place 3 responseURL is ' + responseURL);
-    if (reqBody.token != "qAuoAiwY3kSaSC076U3EfkNr"){
+    if (req.body.token != "qAuoAiwY3kSaSC076U3EfkNr"){
 		console.log('----place 4 ');
         res.status(403).end("Access forbidden")
     }else{
