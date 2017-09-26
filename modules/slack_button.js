@@ -5,9 +5,9 @@
 exports.execute = (req, res) => {
 	res.status(200).end() // best practice to respond with empty 200 status code
 	console.log('----place 1 ');
-    var reqBody = req.body
+    //var reqBody = req.body
 	console.log('----place 2 ');
-    var responseURL = reqBody.response_url
+    //var responseURL = reqBody.response_url
 	console.log('----place 3 responseURL is ' + responseURL);
     if (reqBody.token != "qAuoAiwY3kSaSC076U3EfkNr"){
 		console.log('----place 4 ');
@@ -15,7 +15,7 @@ exports.execute = (req, res) => {
     }else{
         
 		console.log('----place 5 ');
-		var message = {
+		let message = {
             "text": "This is your first interactive message",
             "attachments": [
                 {
@@ -47,7 +47,7 @@ exports.execute = (req, res) => {
                     ]
                 }
             ]
-        }
+        };
         //sendMessageToSlackResponseURL(responseURL, message)
 		console.log('----before res.json(message) ');
 		res.json(message);
