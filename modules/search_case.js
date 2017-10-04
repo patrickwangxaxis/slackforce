@@ -32,6 +32,8 @@ exports.execute = (req, res) => {
                 attachments: [
                     {color: "#F2CF5B", fields: fields,
 					"attachment_type": "default",
+					"fallback": "Shame... buttons aren't supported in this land",
+                    "callback_id": "button_tutorial",
             
 			"actions": [
                  
