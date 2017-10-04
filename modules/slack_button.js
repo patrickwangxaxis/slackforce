@@ -13,8 +13,8 @@ exports.execute = (req, res) => {
 		console.log('----place 4 ');
         res.status(403).end("Access forbidden")
     }else{
-        let slackUserId = req.body.user_id,
-		console.log('----place 5 ');
+        let slackUserId = req.body.user_id;
+		console.log('----place 5, slackUserId is  ' + slackUserId);
 		let message = {
             "text": "This is your first interactive message",
             "attachments": [
@@ -35,7 +35,7 @@ exports.execute = (req, res) => {
                             "name": "no",
                             "text": "no",
                             "type": "button",
-                            "value": slackUserId
+                            "value": "no"
                         },
                         {
                             "name": "maybe",
