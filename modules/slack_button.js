@@ -3,7 +3,7 @@
  
 
 exports.execute = (req, res) => {
-	res.status(200).end() // best practice to respond with empty 200 status code
+	//res.status(200).end() // best practice to respond with empty 200 status code
 	console.log('----place 1 ');
     //var reqBody = req.body
 	console.log('----place 2 ');
@@ -50,6 +50,7 @@ exports.execute = (req, res) => {
         };
         //sendMessageToSlackResponseURL(responseURL, message)
 		console.log('----before res.json(message) ');
+		console.log('---message is ' + message);
 		res.json(message);
     }
 };
