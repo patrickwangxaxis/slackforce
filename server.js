@@ -11,6 +11,8 @@ let express = require('express'),
     actions = require('./modules/actions'),
 	searchCase = require('./modules/search_case'),
 	slackbutton = require('./modules/slack_button'),
+	buttonAction = require('./modules/button_action'),
+	
     app = express();
 
 
@@ -27,6 +29,7 @@ app.post('/pipeline', opportunity.execute);
 app.post('/contact', contact.execute);
 app.post('/searchcase', searchCase.execute);
 app.post('/slackbutton', slackbutton.execute);
+app.post('/slack/actions', buttonAction.execute);
 app.post('/account', account.execute);
 app.post('/case', _case.execute);
 app.post('/whoami', whoami.execute);
