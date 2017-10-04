@@ -35,7 +35,7 @@ exports.execute = (req, res) => {
                             "name": "no",
                             "text": "no",
                             "type": "button",
-                            "value": "no"
+                            "value": slackUserId
                         },
                         {
                             "name": "maybe",
