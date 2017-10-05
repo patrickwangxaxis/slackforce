@@ -27,7 +27,7 @@ exports.execute = (req, res) => {
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			subject: "update test" + date.now();
+			subject: "update test1";
             
         })
         .then(data => {
