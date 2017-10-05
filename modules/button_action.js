@@ -21,22 +21,21 @@ exports.execute = (req, res) => {
 	let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",
-        description = "test description";
-
-    force.create(oauthObj, "Case",
+        description = "test description",
+		caseId = "500e000000B9NaaAAF";
+        
+    force.update(oauthObj, "Case",
         {
-            subject: subject,
-            description: description,
-            origin: "Slack",
-            status: "New"
+            id : caseId,
+			subject: "update test" +  Date.now()
+            
         })
         .then(data => {
             let fields = [];
             fields.push({title: "Subject", value: subject, short:false});
-            fields.push({title: "Description", value: description, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
             let message = {
-                text: "A new case has been created:",
+                text: "A case has been updated:",
                 attachments: [
                     {color: "#F2CF5B", fields: fields
 					 

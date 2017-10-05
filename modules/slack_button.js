@@ -26,23 +26,10 @@ exports.execute = (req, res) => {
                     "attachment_type": "default",
                     "actions": [
                         {
-                            "name": "yes",
-                            "text": "yes",
-                            "type": "button",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "no",
-                            "text": "no",
+                            "name": "update case",
+                            "text": "Update Case",
                             "type": "button",
                             "value": slackUserId
-                        },
-                        {
-                            "name": "maybe",
-                            "text": "maybe",
-                            "type": "button",
-                            "value": "maybe",
-                            "style": "danger"
                         }
                     ]
                 }
