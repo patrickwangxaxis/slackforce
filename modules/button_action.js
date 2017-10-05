@@ -12,7 +12,52 @@ exports.execute = (req, res) => {
     }
 	console.log('----in button_action, before res.json(message) ');
     console.log('---message is ' + message);
-	res.json(message);
+	//res.json(message);
+	let auth = require("./slack-salesforce-auth"),
+    force = require("./force");
+	
+	
+	//**********************************************************
+	let slackUserId = req.body.user_id,
+        oauthObj = auth.getOAuthObject(slackUserId),
+        subject = "test subject",
+        description = "test description";
+
+    force.create(oauthObj, "Case",
+        {
+            subject: subject,
+            description: description,
+            origin: "Slack",
+            status: "New"
+        })
+        .then(data => {
+            let fields = [];
+            fields.push({title: "Subject", value: subject, short:false});
+            fields.push({title: "Description", value: description, short:false});
+            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
+            let message = {
+                text: "A new case has been created:",
+                attachments: [
+                    {color: "#F2CF5B", fields: fields
+					 
+			
+					}
+                ]
+            };
+			console.log('----slack user is ' + slackUserId);
+            res.json(message);
+			
+			 
+        })
+        .catch((error) => {
+            if (error.code == 401) {
+                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
+
+            } else {
+                res.send("An error as occurred");
+            }
+        });
+	//*********************************************************
 };
 /*
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
