@@ -27,7 +27,7 @@ exports.execute = (req, res) => {
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			subject: "update test" +  Date.now()
+			subject: "update test" 
             
         })
         .then(data => {
@@ -53,7 +53,7 @@ exports.execute = (req, res) => {
                 res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
 
             } else {
-                res.send("An error as occurred");
+                res.send("An error as occurred" +error.message);
             }
         });
 	//*********************************************************
