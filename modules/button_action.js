@@ -1,6 +1,7 @@
 "use strict";
 
- 
+ let auth = require("./slack-salesforce-auth"),
+    force = require("./force");
 
 exports.execute = (req, res) => {
 	//res.status(200).end() // best practice to respond with 200 status
@@ -13,8 +14,7 @@ exports.execute = (req, res) => {
 	console.log('----in button_action, before res.json(message) ');
     console.log('---message is ' + message);
 	//res.json(message);
-	let auth = require("./slack-salesforce-auth"),
-    force = require("./force");
+	
 	
 	
 	//**********************************************************
@@ -27,7 +27,7 @@ exports.execute = (req, res) => {
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			subject: "update test" + Date.now()
+			subject: "update test" + new Date()
             
         })
         .then(data => {
