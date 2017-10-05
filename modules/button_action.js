@@ -22,7 +22,7 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",
         description = "test description",
-		caseId = "500e000000B9NaaAAF";
+		caseId = "500e000000AmhVU";
         
     force.update(oauthObj, "Case",
         {
@@ -33,7 +33,7 @@ exports.execute = (req, res) => {
         .then(data => {
             let fields = [];
             fields.push({title: "Subject", value: subject, short:false});
-            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + data.id, short:false});
+            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + caseId, short:false});
             let message = {
                 text: "A case has been updated:",
                 attachments: [
