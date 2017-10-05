@@ -33,7 +33,7 @@ exports.execute = (req, res) => {
         .then(data => {
             let fields = [];
             fields.push({title: "Subject", value: subject, short:false});
-            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + caseId, short:false});
+            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + id, short:false});
             let message = {
                 text: "A case has been updated:",
                 attachments: [
