@@ -16,18 +16,18 @@ exports.execute = (req, res) => {
         let slackUserId = req.body.user_id;
 		console.log('----place 5, slackUserId is  ' + slackUserId);
 		let message = {
-            "text": "This is your first interactive message",
+            "text": "This is your interactive message",
             "attachments": [
                 {
-                    "text": "Building buttons is easy right?",
+                    "text": "Click the button to update the case",
                     "fallback": "Shame... buttons aren't supported in this land",
-                    "callback_id": "button_tutorial------",
+                    "callback_id": "button__test_tutorial",
                     "color": "#3AA3E3",
                     "attachment_type": "default",
                     "actions": [
                         {
-                            "name": "update case",
-                            "text": "Update Case",
+                            "name": "update case subject",
+                            "text": "Update Case Subject",
                             "type": "button",
                             "value": slackUserId
                         }
