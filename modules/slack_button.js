@@ -19,8 +19,8 @@ exports.execute = (req, res) => {
             "text": "This is your interactive message",
             "attachments": [
                 {
-                    "text": "Click the button to update the case",
-                    "fallback": "Shame... buttons aren't supported in this land",
+                    "text": "Click the button to update the case subject",
+                    "fallback": "Damn it didn't work",
                     "callback_id": "button__test_tutorial",
                     "color": "#3AA3E3",
                     "attachment_type": "default",
@@ -37,27 +37,27 @@ exports.execute = (req, res) => {
             "callback_id": "select_simple_1234",
             "actions": [
                 {
-                    "name": "games_list",
-                    "text": "Pick a game...",
+                    "name": "status_list",
+                    "text": "Pick a status...",
                     "type": "select",
                     "options": [
                         {
-                            "text": "Chess",
-                            "value": "chess"
+                            "text": "Open",
+                            "value": "Open"
                         },
                         {
-                            "text": "Falken's Maze",
-                            "value": "maze"
+                            "text": "Pending",
+                            "value": "Pending"
                         },
                         {
-                            "text": "Thermonuclear War",
-                            "value": "war"
+                            "text": "In Progress",
+                            "value": "In Progress"
                         }
                     ],
                     "selected_options": [
                         {
-                            "text": "Falken's Maze",
-                            "value": "maze"
+                            "text": "In Progress",
+                            "value": "In Progress"
                         }
                     ]
                 }
