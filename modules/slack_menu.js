@@ -18,21 +18,41 @@ exports.execute = (req, res) => {
 		let message = {
             "text": "This is your interactive message",
             "attachments": [
-                {
-                    "text": "Click the button to update the case subject",
+                 
+				{
+            "text": "Choose the case status",
                     "fallback": "Damn it didn't work",
-                    "callback_id": "button_test",
+                    "callback_id": "menu_test",
                     "color": "#3AA3E3",
                     "attachment_type": "default",
-                    "actions": [
+            "actions": [
+                {
+                    "name": "status_list",
+                    "text": "Pick a status...",
+                    "type": "select",
+                    "options": [
                         {
-                            "name": "update case subject",
-                            "text": "Update Case Subject",
-                            "type": "button",
-                            "value": slackUserId
+                            "text": "Open",
+                            "value": "Open"
+                        },
+                        {
+                            "text": "Pending",
+                            "value": "Pending"
+                        },
+                        {
+                            "text": "In Progress",
+                            "value": "In Progress"
+                        }
+                    ],
+                    "selected_options": [
+                        {
+                            "text": "In Progress",
+                            "value": "In Progress"
                         }
                     ]
                 }
+            ]
+        }
             ]
         };
         //sendMessageToSlackResponseURL(responseURL, message)
