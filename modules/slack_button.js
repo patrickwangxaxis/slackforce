@@ -32,7 +32,37 @@ exports.execute = (req, res) => {
                             "value": slackUserId
                         }
                     ]
+                },
+				{
+            "callback_id": "select_simple_1234",
+            "actions": [
+                {
+                    "name": "games_list",
+                    "text": "Pick a game...",
+                    "type": "select",
+                    "options": [
+                        {
+                            "text": "Chess",
+                            "value": "chess"
+                        },
+                        {
+                            "text": "Falken's Maze",
+                            "value": "maze"
+                        },
+                        {
+                            "text": "Thermonuclear War",
+                            "value": "war"
+                        }
+                    ],
+                    "selected_options": [
+                        {
+                            "text": "Falken's Maze",
+                            "value": "maze"
+                        }
+                    ]
                 }
+            ]
+        }
             ]
         };
         //sendMessageToSlackResponseURL(responseURL, message)
