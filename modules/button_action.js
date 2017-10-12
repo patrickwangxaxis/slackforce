@@ -25,7 +25,9 @@ exports.execute = (req, res) => {
         subject = "test subject",
         description = "test description",
 		caseId = "500e000000AmhVU";
-        
+    if (actionName == "case button")
+	{		
+    
     force.update(oauthObj, "Case",
         {
             id : caseId,
@@ -37,7 +39,7 @@ exports.execute = (req, res) => {
             fields.push({title: "Subject", value: subject, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + caseId, short:false});
             let message = {
-                text: "A case has been updated:",
+                text: "A case's subject has been updated:",
                 attachments: [
                     {color: "#F2CF5B", fields: fields
 					 
@@ -57,7 +59,45 @@ exports.execute = (req, res) => {
             } else {
                 res.send("An error as occurred" +error.message);
             }
-        });
+	});
+	}
+	
+	if (actionName == "case status")
+	{		
+    
+    force.update(oauthObj, "Case",
+        {
+            id : caseId,
+			status: actionJSONPayload.actions[0].selected_options[0].value
+            
+        })
+        .then(data => {
+            let fields = [];
+            fields.push({title: "Subject", value: subject, short:false});
+            fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + caseId, short:false});
+            let message = {
+                text: "A case's status has been updated:",
+                attachments: [
+                    {color: "#F2CF5B", fields: fields
+					 
+			
+					}
+                ]
+            };
+			console.log('----slack user is ' + slackUserId);
+            res.json(message);
+			
+			 
+        })
+        .catch((error) => {
+            if (error.code == 401) {
+                res.send(`Visit this URL to login to Salesforce: https://${req.hostname}/login/` + slackUserId);
+
+            } else {
+                res.send("An error as occurred" +error.message);
+            }
+	});
+	}
 	//*********************************************************
 };
 /*
