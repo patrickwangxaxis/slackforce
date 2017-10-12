@@ -26,7 +26,7 @@ exports.execute = (req, res) => {
                     "attachment_type": "default",
                     "actions": [
                         {
-                            "name": "update case subject",
+                            "name": "case button",
                             "text": "Update Case Subject",
                             "type": "button",
                             "value": slackUserId

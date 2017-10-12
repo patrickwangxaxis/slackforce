@@ -7,6 +7,7 @@ exports.execute = (req, res) => {
 	//res.status(200).end() // best practice to respond with 200 status
     var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
 	console.log('---selected button value is '+ actionJSONPayload.actions[0].name);
+	console.log('---selected button value is '+ actionJSONPayload.actions[0].value);
 	let message = {
         "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].value,
         "replace_original": false
@@ -15,9 +16,10 @@ exports.execute = (req, res) => {
     console.log('---message is ' + message);
 	//res.json(message);
 	
-	
+	var actionName = actionJSONPayload.actions[0].name;
 	
 	//**********************************************************
+	 
 	let slackUserId = req.body.user_id,
         oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",

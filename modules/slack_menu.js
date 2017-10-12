@@ -27,7 +27,7 @@ exports.execute = (req, res) => {
                     "attachment_type": "default",
             "actions": [
                 {
-                    "name": "status_list",
+                    "name": "case status",
                     "text": "Pick a status...",
                     "type": "select",
                     "options": [
