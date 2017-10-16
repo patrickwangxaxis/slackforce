@@ -37,7 +37,7 @@ exports.execute = (req, res) => {
         };
         //sendMessageToSlackResponseURL(responseURL, message)
 		console.log('----before res.json(message) ');
-		//console.log('---message is ' + message);
+		console.log('---message is ' + message);
 		res.json(message);
     }
 };
