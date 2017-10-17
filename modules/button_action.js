@@ -31,7 +31,8 @@ exports.execute = (req, res) => {
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			subject: "update test" + new Date()
+			subject: "update test" + new Date(),
+			ownerId : "005i0000005PQjt"
             
         })
         .then(data => {
@@ -39,7 +40,7 @@ exports.execute = (req, res) => {
             fields.push({title: "Subject", value: subject, short:false});
             fields.push({title: "Open in Salesforce:", value: oauthObj.instance_url + "/" + caseId, short:false});
             let message = {
-                text: "A case's subject has been updated:",
+                text: "A case's owner and subject have been updated:",
                 attachments: [
                     {color: "#F2CF5B", fields: fields
 					 
