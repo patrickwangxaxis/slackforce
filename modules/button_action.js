@@ -25,8 +25,8 @@ exports.execute = (req, res) => {
         subject = "test subject",
         description = "test description",
 		caseId = "500e000000AmhVU",
-		ownerId = "005i0000005PQjt"; // pw
-		//ownerId = "00531000006n0UJ"; //VS
+		//ownerId = "005i0000005PQjt"; // pw
+		ownerId = "00531000006n0UJ"; //VS
 		
     if (actionName == "case button")
 	{		
