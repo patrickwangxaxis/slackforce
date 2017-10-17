@@ -32,7 +32,7 @@ exports.execute = (req, res) => {
         {
             id : caseId,
 			subject: "update test" + new Date(),
-			ownerId : "005i0000005PQjt"
+			
             
         })
         .then(data => {
