@@ -34,7 +34,7 @@ exports.execute = (req, res) => {
         {
             id : caseId,
 			subject: "update test -- " + new Date(),
-			OwnerId: ownerId
+			Assign_To__c: ownerId
 			
             
         })
