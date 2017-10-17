@@ -24,7 +24,9 @@ exports.execute = (req, res) => {
         oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",
         description = "test description",
-		caseId = "500e000000AmhVU";
+		caseId = "500e000000AmhVU",
+		ownerId = "005i0000005PQjt";
+		
     if (actionName == "case button")
 	{		
     
@@ -32,6 +34,7 @@ exports.execute = (req, res) => {
         {
             id : caseId,
 			subject: "update test" + new Date(),
+			OwnerId: ownerId;
 			
             
         })
