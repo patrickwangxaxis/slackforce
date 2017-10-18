@@ -13,6 +13,7 @@ exports.execute = (req, res) => {
         "replace_original": false
     }
 	console.log('----in button_action, before res.json(message) ');
+	
     console.log('---message is ' + message);
 	//res.json(message);
 	
@@ -30,7 +31,7 @@ exports.execute = (req, res) => {
 		
     if (actionName == "case button")
 	{		
-    
+    console.log('----button value is ' + actionJSONPayload.actions[0].value);
     force.update(oauthObj, "Case",
         {
             id : caseId,
