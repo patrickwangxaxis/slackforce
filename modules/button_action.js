@@ -21,8 +21,7 @@ exports.execute = (req, res) => {
 	//**********************************************************
 	 
 	let slackUserId = req.body.user_id,
-		slackCurrentUser = users.info.name,
-        oauthObj = auth.getOAuthObject(slackUserId),
+		oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",
         description = "test description",
 		caseId = "500e000000AmhVU",
@@ -55,7 +54,7 @@ exports.execute = (req, res) => {
                 ]
             };
 			console.log('----slack user is ' + slackUserId);
-			console.log('----slackCurrentUser is ' + slackCurrentUser);
+			 
 			
 			
             res.json(message);
