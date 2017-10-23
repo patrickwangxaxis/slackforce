@@ -44,7 +44,8 @@ exports.execute = (req, res) => {
         {
             id : caseId,
 			subject: "update test -- " + new Date(),
-			Assign_To__c: ownerId
+			Assign_To__c: ownerId,
+			Other_Data_Sources__c : "slack"
 			
             
         })
@@ -93,7 +94,8 @@ exports.execute = (req, res) => {
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			status: caseStatus
+			status: caseStatus 
+			 
             
         })
         .then(data => {
