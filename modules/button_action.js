@@ -83,10 +83,17 @@ exports.execute = (req, res) => {
 	if (actionName == "case status")
 	{		
     
+	var arr = actionJSONPayload.actions[0].selected_options[0].value.toString().split("|");
+	console.log('----arr[0] is ' + arr[0]);
+	console.log('----arr[1] is ' + arr[1]);
+	
+	var caseStatus = arr[0];
+	var caseId = arr[1];
+	
     force.update(oauthObj, "Case",
         {
             id : caseId,
-			status: actionJSONPayload.actions[0].selected_options[0].value
+			status: caseStatus
             
         })
         .then(data => {
