@@ -24,14 +24,18 @@ exports.execute = (req, res) => {
 	let slackUserId = req.body.user_id,
 		oauthObj = auth.getOAuthObject(slackUserId),
         subject = "test subject",
-        description = "test description",
-		caseId = "500e000000AmhVU",
-		ownerId = "005i0000005PQjt"; // pw
+        description = "test description";
+		//caseId = "500e000000AmhVU",
+		//ownerId = "005i0000005PQjt"; // pw
 		//ownerId = "00531000006n0UJ"; //VS
 		
     if (actionName == "case button")
 	{		
     console.log('----button value is ' + actionJSONPayload.actions[0].value);
+	
+	var arr = actionJSONPayload.actions[0].value.toString().split("|");
+	console.log('----arr[0] is ' + arr[0]);
+	console.log('----arr[1] is ' + arr[1]);
     force.update(oauthObj, "Case",
         {
             id : caseId,
