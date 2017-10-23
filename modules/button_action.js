@@ -44,7 +44,7 @@ exports.execute = (req, res) => {
         {
             id : caseId,
 			subject: "update test -- " + new Date(),
-			//Assign_To__c: ownerId,
+			Assign_To__c: ownerId,
 			ownerId: ownerId,
 			Other_Data_Sources__c : "slack"
 			
